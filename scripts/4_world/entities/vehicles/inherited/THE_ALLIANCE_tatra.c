@@ -321,3 +321,16 @@ class Truck_Tatra_Base extends CarScript
 		Fill( CarFluid.OIL, 4.0 );
 	};
 }
+
+modded class DayZPlayerCamera3rdPersonVehicle extends DayZPlayerCameraBase
+{
+    void DayZPlayerCamera3rdPersonVehicle (DayZPlayer pPlayer, HumanInputController pInput)
+    {
+        if (pPlayer.GetCommand_Vehicle().GetTransport().GetType() == "Truck_Tatra" )
+        {        
+			m_fDistance         = 7.5; 
+			m_CameraOffsetMS    = "0.0 1.2 0.0";
+        }
+
+    }
+}
