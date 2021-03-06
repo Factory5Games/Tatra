@@ -91,20 +91,20 @@ class CfgMods
 		selection = "wheel_2_3";
 		ghostIcon = "doublewheel";
 	};
-	// class Slot_Truck_Tatra_Wheel_Spare_1
-	// {
-	// 	name = "Truck_Tatra_Wheel_Spare_1";
-	// 	displayName = "Spare Left Wheel";
-	// 	selection = "wheel_spare_1";
-	// 	ghostIcon = "wheel";
-	// };
-	// class Slot_Truck_Tatra_Wheel_Spare_2
-	// {
-	// 	name = "Truck_Tatra_Wheel_Spare_2";
-	// 	displayName = "Spare Right Wheel";
-	// 	selection = "wheel_spare_2";
-	// 	ghostIcon = "wheel";
-	// };
+	class Slot_Truck_Tatra_Wheel_Spare_1
+	{
+		name = "Truck_Tatra_Wheel_Spare_1";
+		displayName = "Spare Front Wheel";
+		selection = "wheel_spare_1";
+		ghostIcon = "wheel";
+	};
+	class Slot_Truck_Tatra_Wheel_Spare_2
+	{
+		name = "Truck_Tatra_Wheel_Spare_2";
+		displayName = "Spare Front Wheel";
+		selection = "wheel_spare_2";
+		ghostIcon = "wheel";
+	};
 	class Slot_Truck_Tatra_Hood
 	{
 		name = "Truck_Tatra_Hood";
@@ -268,40 +268,20 @@ class cfgvehicles
 			"Reflector_2_1"
 	 	};		 
 	};
+	class Truck_01_Wheel;
 	
-	class Truck_01_Wheel: CarWheel
+	class Truck_Tatra_Wheel: Truck_01_Wheel
 	{
 		scope = 2;
-		displayName = "$STR_V3SWheel0";
-		descriptionShort = "$STR_V3SWheel1";
-		model = "\DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_Wheel.p3d";
-		weight = 30000;
-		itemSize[] = {10,10};
-		itemBehaviour = 0;
-		inventorySlot[] = {"Truck_01_Wheel_1_1","Truck_01_Wheel_2_1","Truck_01_Wheel_Spare_1","Truck_01_Wheel_Spare_2","Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
-		rotationFlags = 12;
-		physLayer = "item_large";
-		tyreRollDrag = 10;
-		tyreRollResistance = 0.07;
-		tyreTread = 0.95;
-		radiusByDamage[] = {0,0.465,0.3,0.38,0.9998,0.35,0.9999,0.28};
-		radius = 0.465;
-		width = 0.2;
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 200;
-					//healthLevels[] = {{1.0,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire.rvmat","DZ\vehicles\wheeled\Truck_01\data\v3s_rim.rvmat"}},{0.7,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire.rvmat","DZ\vehicles\wheeled\Truck_01\data\v3s_rim.rvmat"}},{0.5,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire_damage.rvmat","DZ\vehicles\wheeled\Truck_01\data\v3s_rim_damage.rvmat"}},{0.3,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire_damage.rvmat","DZ\vehicles\wheeled\Truck_01\data\v3s_rim_damage.rvmat"}},{0.0,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire_destruct.rvmat","DZ\vehicles\wheeled\Truck_01\data\v3s_rim_destruct.rvmat"}}};
-				};
-			};
-		};
+		displayName = "Tatra Front Wheel";
+		descriptionShort = "This is a front wheel for the Tatra";
+		model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel.p3d";		
+		inventorySlot[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
+		
 	};
-	class Truck_01_Wheel_Ruined: Truck_01_Wheel
+	class Truck_Tatra_Wheel_Ruined: Truck_Tatra_Wheel
 	{
-		model = "\DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_Wheel_ruined.p3d";
+		model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel_ruined.p3d";
 		weight = 25000;
 		tyreRollResistance = 1;
 		tyreRollDrag = 80;
@@ -311,27 +291,16 @@ class cfgvehicles
 		friction = -1.0;
 		width = 0.2;
 	};
-	class Truck_01_WheelDouble: Truck_01_Wheel
+	class Truck_Tatra_Wheel_Dual: Truck_01_Wheel
 	{
-		displayName = "$STR_V3SWheelDouble0";
-		descriptionShort = "$STR_V3SWheelDouble1";
-		model = "\DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_WheelDouble.p3d";
+		displayName = "Tatra Dual Back Wheel ";
+		descriptionShort = "This is a read dually wheel for the Tatra";
+		model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel_Dual.p3d";
 		weight = 50000;
-		inventorySlot[] = {"Truck_01_Wheel_1_2","Truck_01_Wheel_1_3","Truck_01_Wheel_2_2","Truck_01_Wheel_2_3","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
-		width = 0.4;
-		class DamageSystem
-		{
-			class GlobalHealth
-			{
-				class Health
-				{
-					hitpoints = 400;
-					healthLevels[] = {{1.0,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire.rvmat","DZ\vehicles\wheeled\Truck_01\data\Truck_01_rim.rvmat"}},{0.7,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire.rvmat","DZ\vehicles\wheeled\Truck_01\data\Truck_01_rim.rvmat"}},{0.5,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire_damage.rvmat","DZ\vehicles\wheeled\Truck_01\data\Truck_01_rim_damage.rvmat"}},{0.3,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire_damage.rvmat","DZ\vehicles\wheeled\Truck_01\data\Truck_01_rim_damage.rvmat"}},{0.0,{"DZ\vehicles\wheeled\Truck_01\data\Truck_01_tire_destruct.rvmat","DZ\vehicles\wheeled\Truck_01\data\Truck_01_rim_destruct.rvmat"}}};
-				};
-			};
-		};
+		inventorySlot[] = {"Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
+		width = 0.4;		
 	};
-	class Truck_01_WheelDouble_Ruined: Truck_01_WheelDouble
+	class Truck_Tatra_Wheel_Dual_Ruined: Truck_01_Wheel
 	{
 		model = "\DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_WheelDouble_ruined.p3d";
 		tyreRollResistance = 1;
@@ -453,7 +422,7 @@ class cfgvehicles
 	{
 		scope = 0;
 		displayName = "Truck Tatra";
-		attachments[] = {"TruckBattery","Reflector_1_1","Reflector_2_1","Truck_Tatra_Door_1_1","Truck_Tatra_Door_2_1","Truck_Tatra_Hood","Truck_Tatra_Trunk","Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_3"};
+		attachments[] = {"TruckBattery","Reflector_1_1","Reflector_2_1","Truck_Tatra_Door_1_1","Truck_Tatra_Door_2_1","Truck_Tatra_Hood","Truck_Tatra_Trunk","Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
 		//hiddenSelections[] = {"light_1_1","light_2_1","light_brake_1_2","light_brake_2_2","light_reverse_1_2","light_reverse_2_2","light_1_2","light_2_2","light_dashboard","dmgZone_chassis","dmgZone_front","dmgZone_back","dmgZone_roof","dmgZone_fueltank","dmgZone_fender_1_1","dmgZone_fender_1_2","dmgZone_fender_2_1","dmgZone_fender_2_2","dmgZone_wood","cabine_interior"};
 		//hiddenSelectionsTextures[] = {"","","","","","","","","","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)","#(argb,8,8,3)color(0.521569,0.427451,0.054902,1.0,co)"};
 		dashboardMatOn = "dz\vehicles\wheeled\truck_01\data\truck_01_dashboard_light.rvmat";
@@ -695,7 +664,7 @@ class cfgvehicles
 					componentNames[] = {"dmgZone_engine"};
 					class Health
 					{
-						hitpoints = 1500;
+						hitpoints = 3000;
 						transferToGlobalCoef = 1;
 						healthLevels[] = {{1.0,{}},{0.7,{}},{0.5,{}},{0.3,{}},{0.0,{}}};
 					};
@@ -912,7 +881,14 @@ class cfgvehicles
 				name = "$STR_attachment_Chassis0";
 				description = "";
 				icon = "cat_vehicle_chassis";
-				attachmentSlots[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_3"};
+				attachmentSlots[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3","Truck_Tatra_Wheel_1_3"};
+			};
+			class Dump
+			{
+				name = "Dump Bed";
+				description = "";
+				icon = "cat_vehicle_chassis";
+				attachmentSlots[] = {"Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
 			};
 		};
 	};
@@ -923,7 +899,7 @@ class cfgvehicles
 		scope = 2;
 		displayName = "Tatra";
 		model = "THE_ALLIANCE_tatra\tatra\Truck_Tatra_Chassis.p3d";
-		attachments[] = {"TruckBattery","Reflector_1_1","Reflector_2_1","Truck_Tatra_Door_1_1","Truck_Tatra_Door_2_1","Truck_Tatra_Hood","Truck_Tatra_Trunk","Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
+		attachments[] = {"TruckBattery","Reflector_1_1","Reflector_2_1","Truck_Tatra_Door_1_1","Truck_Tatra_Door_2_1","Truck_Tatra_Hood","Truck_Tatra_Trunk","Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
 		class Cargo
 		{
 			itemsCargoSize[] = {10,60};
@@ -952,6 +928,13 @@ class cfgvehicles
 				description = "";
 				icon = "cat_vehicle_chassis";
 				attachmentSlots[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
+			};
+			class Dump
+			{
+				name = "Dump Bed";
+				description = "";
+				icon = "cat_vehicle_chassis";
+				attachmentSlots[] = {"Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
 			};
 			// class BaseBuildingAttachments
 			// {
@@ -985,24 +968,24 @@ class cfgvehicles
 			shadow = 1;
 			reversed = 0;
 		};
-		class ProxyTruck_01_Wheel: ProxyVehiclePart
+		class ProxyTruck_Tatra_Wheel: ProxyVehiclePart
 		{
-			model = "DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_Wheel.p3d";
-			inventorySlot[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1"};
+			model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel.p3d";
+			inventorySlot[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
 		};
-		class ProxyTruck_01_Wheel_ruined: ProxyVehiclePart
+		class ProxyTruck_Tatra_Wheel_ruined: ProxyVehiclePart
 		{
-			model = "DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_Wheel_ruined.p3d";
-			inventorySlot[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1"};
+			model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel_ruined.p3d";
+			inventorySlot[] = {"Truck_Tatra_Wheel_1_1","Truck_Tatra_Wheel_2_1","Truck_Tatra_Wheel_Spare_1","Truck_Tatra_Wheel_Spare_2"};
 		};
-		class ProxyTruck_01_WheelDouble: ProxyVehiclePart
+		class ProxyTruck_Tatra_Wheel_Dual: ProxyVehiclePart
 		{
-			model = "DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_WheelDouble.p3d";
+			model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel_Dual.p3d";
 			inventorySlot[] = {"Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
 		};
-		class ProxyTruck_01_WheelDouble_ruined: ProxyVehiclePart
+		class ProxyTruck_Tatra_Wheel_Dual_ruined: ProxyVehiclePart
 		{
-			model = "DZ\vehicles\wheeled\Truck_01\proxy\Truck_01_WheelDouble_ruined.p3d";
+			model = "THE_ALLIANCE_tatra\tatra\proxy\Truck_Tatra_Wheel_Dual_ruined.p3d";
 			inventorySlot[] = {"Truck_Tatra_Wheel_1_2","Truck_Tatra_Wheel_1_3","Truck_Tatra_Wheel_2_2","Truck_Tatra_Wheel_2_3"};
 		};
 		class ProxyTruck_Tatra_Door_1_1: ProxyVehiclePart

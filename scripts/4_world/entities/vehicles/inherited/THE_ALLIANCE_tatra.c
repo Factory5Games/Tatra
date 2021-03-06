@@ -169,11 +169,14 @@ class Truck_Tatra_Base extends CarScript
 					return CarDoorState.DOORS_OPEN;
 				else
 					return CarDoorState.DOORS_CLOSED;
+			break;
+
 			case "Truck_Tatra_Trunk":
 				if ( GetAnimationPhase("DoorsTrunk") > 0.5 )
 					return CarDoorState.DOORS_OPEN;
 				else
 					return CarDoorState.DOORS_CLOSED;
+			break;
 		}
 		
 		return CarDoorState.DOORS_MISSING;
@@ -308,6 +311,7 @@ class Truck_Tatra_Base extends CarScript
 			entity.GetInventory().CreateInInventory( "Truck_Tatra_Door_1_1" );
 			entity.GetInventory().CreateInInventory( "Truck_Tatra_Door_2_1" );
 			entity.GetInventory().CreateInInventory( "Truck_Tatra_Hood" );
+			entity.GetInventory().CreateInInventory( "Truck_Tatra_Trunk" );
 
 			entity.GetInventory().CreateInInventory( "HeadlightH7" );
 			entity.GetInventory().CreateInInventory( "HeadlightH7" );
